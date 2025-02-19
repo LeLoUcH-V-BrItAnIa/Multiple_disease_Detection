@@ -3,9 +3,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 # Load the model
-diabetes_model = pickle.load(open('E:/MCA/Python/multiple_disease_Detection/models/diabetes_prediction_model.sav','rb'))
-heart_model = pickle.load(open('E:/MCA/Python/multiple_disease_Detection/models/heart_disease_model.sav','rb'))
-parkison_model = pickle.load(open('E:/MCA/Python/multiple_disease_Detection/models/parkinsons_model.sav','rb'))
+diabetes_model = pickle.load(open('models/diabetes_prediction_model.sav','rb'))
+heart_model = pickle.load(open('models/heart_disease_model.sav','rb'))
+parkison_model = pickle.load(open('models/parkinsons_model.sav','rb'))
 with st.sidebar:
     selected_page = option_menu('Multiple Disease Prediction System', 
                                 ['Diabetes Prediction'
