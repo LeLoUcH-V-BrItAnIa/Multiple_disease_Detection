@@ -3,9 +3,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 # Load the model
-diabetes_model = pickle.load(open('models/diabetes_prediction_model.sav','rb'))
-heart_model = pickle.load(open('models/heart_disease_model.sav','rb'))
-parkison_model = pickle.load(open('models/parkinsons_model.sav','rb'))
+diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
+heart_model = pickle.load(open('heart_disease_model.sav','rb'))
+parkison_model = pickle.load(open('parkinsons_model.sav','rb'))
 with st.sidebar:
     selected_page = option_menu('Multiple Disease Prediction System', 
                                 ['Diabetes Prediction'
@@ -62,11 +62,13 @@ if (selected_page == 'Diabetes Prediction'):
         user_input = [float(x) for x in user_input]
 
         diab_prediction = diabetes_model.predict([user_input])
-
-        if diab_prediction[0] == 1:
-            diab_diagnosis = 'The person is diabetic'
-        else:
+        print(diab_prediction)
+        if diab_prediction[0] == 0:
+            
             diab_diagnosis = 'The person is not diabetic'
+        else:
+            
+            diab_diagnosis = 'The person is diabetic'
 
     st.success(diab_diagnosis)
         
@@ -75,9 +77,11 @@ if (selected_page == 'Heart Disease Prediction'):
 
     #page title
     st.title('Heart Disease Prediction using ML')
+    
     col1, col2, col3 = st.columns(3)
 
     with col1:
+        
         age = st.text_input('Age')
 
     with col2:
