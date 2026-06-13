@@ -40,3 +40,8 @@ Python • Streamlit • Flask • Scikit-Learn • XGBoost • SHAP • Gemini 
 ## Vision
 
 To create a transparent, interactive, and AI-driven preventive healthcare ecosystem that bridges predictive analytics with personalized medical assistance.
+🎓 MCA Major Project
+
+📢 Presented at ICISE-SVU 2025
+(International Conference on Intelligent Systems and Engineering)
+
